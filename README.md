@@ -1,0 +1,2 @@
+From this course, I expect fascinating lectures with good examples that will help to improve my Java knowledge
+also I hope that the course will help me to understand whether to move further to development or just live as it is
