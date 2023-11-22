@@ -2,8 +2,15 @@ package HW3;
 
 public class Cat extends Animal{
 
+    private static int count;
+
     public Cat(String animalName) {
         super(animalName);
+        count++;
+    }
+
+    public static int getCount() {
+        return count;
     }
 
     public void run(int meters) {
