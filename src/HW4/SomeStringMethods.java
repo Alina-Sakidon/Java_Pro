@@ -16,9 +16,20 @@ public class SomeStringMethods {
         String[] listWord = source.split(" ");
         for (int i = 0; i < listWord.length; i++) {
             if (listWord[i].equals(target)) {
-              return   i + 1;
+                return i + 1;
             }
         }
         return -1;
+    }
+
+    public String stringReverse(String stringToReverse) {
+        return new StringBuilder(stringToReverse).reverse().toString();
+    }
+
+    public boolean isPalindrome(String value) {
+        String cleanValue = value.replaceAll("\\s+", "").toLowerCase();
+        StringBuilder forward = new StringBuilder(cleanValue);
+        StringBuilder reverse = forward.reverse();
+        return (reverse.toString()).equals(cleanValue);
     }
 }
