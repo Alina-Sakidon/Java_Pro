@@ -8,7 +8,7 @@ public class Main {
                 {10, 10, 5, 10},
                 {50, 0, 70, 110},
                 {100, 70, 0, 200},
-                {20, 110, 200, 100}
+                {20, 110, 200, "we"}
         };
         ArrayValueCalculator arrayValueCalculator = new ArrayValueCalculator();
         arrayValueCalculator.doCalc(distances);
