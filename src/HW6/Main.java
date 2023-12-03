@@ -36,7 +36,6 @@ public class Main {
 
         System.out.println("Task 4/5 - Print only selected log types messages");
         printLogMessage(file, "DEBUG", "INFO");
-
     }
 
     private static void readAndPrintAllFile(File file) {
