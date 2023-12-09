@@ -25,6 +25,9 @@ public class Main {
 
         //Task4
         calcOccurrence(rows);
+
+        //Task4***
+        findOccurrence(rows);
     }
 
     static int countOccurrence(List<String> rows, String value) {
@@ -41,5 +44,12 @@ public class Main {
 
     static void calcOccurrence(List<String> rows) {
         rows.stream().distinct().forEach(i -> System.out.println(i + ": " + Collections.frequency(rows, i)));
+    }
+
+    static void findOccurrence(List<String> rows) {
+        List<ResearchResult> occurence = new ArrayList<>();
+        rows.stream().distinct().collect(Collectors.toList()).forEach(i -> occurence.add(new ResearchResult(i, Collections.frequency(rows, i))));
+        occurence.stream().forEach(l-> System.out.println(l));//todo
+       // System.out.println(occurence);
     }
 }
