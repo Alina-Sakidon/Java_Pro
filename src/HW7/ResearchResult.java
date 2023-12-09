@@ -11,6 +11,6 @@ public class ResearchResult {
     }
 
     public String toString() {
-        return "{name: \""+ this.name + "\", occurrence: " + this.occurrence + "}";
+        return "{name: \"" + this.name + "\", occurrence: " + this.occurrence + "}";
     }
 }
