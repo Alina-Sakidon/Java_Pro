@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,6 +19,10 @@ public class Main {
         String[] lines = {"test1 string line", "test2", "test3", "test4", "test4"};
 
         System.out.println(toList(lines));
+
+        //Task3
+        List<Integer> listAll = Arrays.asList(1, 2, 3, 3, 4, 5, 4, 6, 6);
+        System.out.println(findUnique(listAll));
     }
 
     static int countOccurrence(List<String> rows, String value) {
@@ -26,5 +31,9 @@ public class Main {
 
     static ArrayList<String> toList(String... lines) {
         return new ArrayList<>(Arrays.asList(lines));
+    }
+
+    static List<Integer> findUnique(List<Integer> listAll) {
+        return listAll.stream().distinct().collect(Collectors.toList());
     }
 }
