@@ -71,6 +71,6 @@ public class Main {
     static void findOccurrence(List<String> rows) {
         List<ResearchResult> occurence = new ArrayList<>();
         rows.stream().distinct().collect(Collectors.toList()).forEach(i -> occurence.add(new ResearchResult(i, Collections.frequency(rows, i))));
-        occurence.stream().forEach(l -> System.out.println(l));
+        occurence.forEach(System.out::println);
     }
 }
