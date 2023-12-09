@@ -1,6 +1,5 @@
 package HW7;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -23,6 +22,9 @@ public class Main {
         //Task3
         List<Integer> listAll = Arrays.asList(1, 2, 3, 3, 4, 5, 4, 6, 6);
         System.out.println(findUnique(listAll));
+
+        //Task4
+        calcOccurrence(rows);
     }
 
     static int countOccurrence(List<String> rows, String value) {
@@ -35,5 +37,9 @@ public class Main {
 
     static List<Integer> findUnique(List<Integer> listAll) {
         return listAll.stream().distinct().collect(Collectors.toList());
+    }
+
+    static void calcOccurrence(List<String> rows) {
+        rows.stream().distinct().forEach(i -> System.out.println(i + ": " + Collections.frequency(rows, i)));
     }
 }
