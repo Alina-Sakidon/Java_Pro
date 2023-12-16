@@ -37,6 +37,12 @@ public class FileNavigator {
     }
 
     public String toString() {
-        return fileMap.toString();
+        StringBuilder stringBuilder = new StringBuilder();
+        fileMap.forEach((key, files) ->
+        {
+            stringBuilder.append(String.format("\"%s\" : %s", key, files));
+            stringBuilder.append(System.getProperty("line.separator"));
+        });
+        return stringBuilder.toString();
     }
 }

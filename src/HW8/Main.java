@@ -16,7 +16,7 @@ public class Main {
         fileNavigator.add("src/HW3/work3.txt", fileData3);
         fileNavigator.add("src/HW7/work7.java", fileData4);
         fileNavigator.add("src/HW5/work5.txt", fileData5);
-        // fileNavigator.add("src/HW5/workFailed.txt", fileData6);
+
         System.out.println(fileNavigator);
 
         //method find
@@ -31,5 +31,9 @@ public class Main {
 
         //sort
         System.out.println("Sorted values: " + fileNavigator.sortBySize());
+
+        //add illegal path
+        fileNavigator.add("src/HW5/workFailed.txt", fileData6);
+
     }
 }
