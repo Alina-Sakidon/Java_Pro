@@ -34,6 +34,5 @@ public class Main {
 
         //add illegal path
         fileNavigator.add("src/HW5/workFailed.txt", fileData6);
-
     }
 }
