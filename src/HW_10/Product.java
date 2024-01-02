@@ -28,7 +28,7 @@ public class Product {
         public static final String BOOK = "Book", TOY = "Toy";
     }
 
-    public  boolean isContainsDiscount(List<String> productsForDiscount){
-        return getType().equals("bf");
+    public  boolean isContainsDiscount(String type){
+        return getType().equals(type);
     }
 }

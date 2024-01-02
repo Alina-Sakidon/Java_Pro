@@ -70,9 +70,8 @@ public class MainTest {
                 .addingDate(LocalDate.of(2024, Month.FEBRUARY, 16))
                 .build();
         List<Product> listOfProducts2 = Arrays.asList(prodA, prodB, prodC, prodD);
-       List<Product> sortedByDate = applyDiscount(listOfProducts2).stream().sorted(Comparator.comparing(Product::getAddingDate)).collect(Collectors.toList());
 
-
+        sortProductsByDate(listOfProducts2).stream().limit(1).forEach(System.out::println);
     }
 
     public static List<Product> findProductsByTypeAndPrice(List<Product> products, String neededType, Float neededPrice) {
@@ -80,7 +79,6 @@ public class MainTest {
     }
 
     public static List<Product> applyDiscount(List<Product> listOfProducts) {
-        listOfProducts.stream().filter()
         List<Product> productsWithDiscount = findProductWithDiscount(listOfProducts);
         productsWithDiscount.forEach(p -> p.setDiscount(true));
         productsWithDiscount.forEach(p -> p.setPrice(p.getPrice() - p.getPrice() * 0.1f));
@@ -105,5 +103,8 @@ public class MainTest {
         return findProductWithDiscount(listOfProducts).stream().min(Comparator.comparing(Product::getPrice)).get();
     }
 
+    public static List<Product> sortProductsByDate(List<Product> listOfProducts) {
+        return applyDiscount(listOfProducts).stream().sorted(Comparator.comparing(Product::getAddingDate).reversed()).collect(Collectors.toList());
+    }
 
 }
