@@ -16,8 +16,6 @@ public class Client {
         Socket clientSocket = new Socket("localhost", 8081);
         OutputStream outputStream = clientSocket.getOutputStream();
         PrintWriter printWriter = new PrintWriter(outputStream, true);
-
-
         InputStream inputStream = clientSocket.getInputStream();
         String message = "";
         while (!message.equals("exit")){
