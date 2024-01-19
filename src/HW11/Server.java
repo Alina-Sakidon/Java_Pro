@@ -25,23 +25,21 @@ public class Server {
         OutputStream outputStream = accept.getOutputStream();
 
         String line;
-        boolean isTrakingAnswer = false;
         while (!(line = bufferedReader.readLine()).toLowerCase(Locale.ROOT).equals("exit")) {
             System.out.println(String.format("CLIENT: %s", line));
             if (isContainsRuSymbols(line)) {
                 sendMessage("SERVER: Що таке паляниця?", outputStream);
-                isTrakingAnswer = true;
-                continue;
-            }
-            if (line.toLowerCase(Locale.ROOT).equals("хліб")) {
-                sendMessage(String.format("SERVER: Сьогоднішня дата і час, %s.  Гудбай!", LocalDateTime.now()), outputStream);
-                isTrakingAnswer = false;
-            } else if (isTrakingAnswer) {
-                break;
+                if (bufferedReader.readLine().toLowerCase(Locale.ROOT).equals("хліб")) {
+                    sendMessage(String.format("SERVER: Сьогоднішня дата і час, %s.  Гудбай!", LocalDateTime.now()), outputStream);
+                } else {
+                    System.out.println("Server closed");
+                    serverSocket.close();
+                    break;
+                }
             }
             if (line.equals("hello")) {
                 sendMessage("SERVER: Привіт!", outputStream);
-            }
+            } else sendMessage(String.format("SERVER: %s", line), outputStream);
         }
         System.out.println("Server closed");
         serverSocket.close();
