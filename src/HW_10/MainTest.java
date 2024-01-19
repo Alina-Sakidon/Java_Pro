@@ -46,7 +46,7 @@ public class MainTest {
         // Task3.3
         System.out.println("Task3.3 Put exception if category not found");
         List<Product> listOfProducts2 = Arrays.asList(prod3, prod4);
-        //System.out.println(findProductsByType(listOfProducts2, BOOK));
+        System.out.println(findProductsByType(listOfProducts2, BOOK));
 
         //Task4.2
         Product prodA = Product.builder()
